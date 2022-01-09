@@ -26,9 +26,13 @@ const config = {
 					$components: path.resolve('./src/components'),
 					$layout: path.resolve('./src/stores/layoutStore'),
 					$lib: path.resolve('./src/lib'),
+					$post: path.resolve('./src/components/post'),
 					$sanity: path.resolve('./src/lib/sanity'),
 					$stores: path.resolve('./src/stores')
 				}
+			},
+			optimizeDeps: {
+				include: ['highlight.js/lib/core']
 			}
 		})
 	},

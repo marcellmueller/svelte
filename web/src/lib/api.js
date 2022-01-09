@@ -13,7 +13,7 @@ export async function getStaticPage(payload) {
 export async function getPage(slug) {
 	const query = /* groq */ `
     {
-      'page': *[_type == 'page' && slug.current == $slug][0] {
+      'page': *[_type == 'post' && slug.current == $slug][0] {
         ...,
         slug,
       },

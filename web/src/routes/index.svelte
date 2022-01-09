@@ -27,17 +27,9 @@
 	const { cover, title } = page;
 </script>
 
-<h1>{title}</h1>
 <div>
 	<Image src={cover.asset.url} width={500} />
 </div>
 
 <style lang="scss">
-	h1 {
-		color: red;
-
-		&:hover {
-			color: grey;
-		}
-	}
 </style>
