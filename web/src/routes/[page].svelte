@@ -20,6 +20,15 @@
 	const { title } = page;
 </script>
 
-<h1>{title}</h1>
+<section>
+	<h1>{title}</h1>
 
-<BlockRenderer blocks={page.blockContent} />
+	<BlockRenderer blocks={page.blockContent} />
+</section>
+
+<style lang="scss">
+	section {
+		max-width: 880px;
+		margin: 0 auto;
+	}
+</style>

@@ -15,4 +15,7 @@
 	p {
 		margin: 2em 1em;
 	}
+	h2,
+	h3 {
+	}
 </style>

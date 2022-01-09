@@ -20,9 +20,29 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'date',
+      title: 'Date',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: 'category' }],
+    },
+    {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: 'author' }],
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'blockContent',
       title: 'Body',
       type: 'blockContent',
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

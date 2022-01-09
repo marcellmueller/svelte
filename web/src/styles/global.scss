@@ -1,4 +1,8 @@
 $pageMaxWidth: 1440px;
+$small: 600px;
+$smallUp: 600px;
+$mediumUp: 768px;
+$largeUp: 1024px;
 
 .headline-2 {
 	font-family: 'Source Code Pro', monospace;
@@ -25,4 +29,6 @@ h4,
 h5,
 h6 {
 	margin: 0;
+
 }
+

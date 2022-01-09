@@ -1,6 +1,20 @@
 import S from '@sanity/desk-tool/structure-builder';
 
-import { HomeMenuItem, PageMenuItem, PostMenuItem } from './structure/index';
+import {
+  AuthorMenuItem,
+  CategoryMenuItem,
+  HomeMenuItem,
+  PageMenuItem,
+  PostMenuItem,
+} from './structure/index';
 
 export default () =>
-  S.list().title('Content').items([HomeMenuItem, PageMenuItem, PostMenuItem]);
+  S.list()
+    .title('Content')
+    .items([
+      AuthorMenuItem,
+      CategoryMenuItem,
+      HomeMenuItem,
+      PageMenuItem,
+      PostMenuItem,
+    ]);

@@ -4,25 +4,19 @@
 	export let blocks;
 </script>
 
-<section>
-	<PortableText
-		{blocks}
-		serializers={{
-			types: {
-				codeBlock: Code
-			},
-			blockStyles: {
-				normal: Blocks,
-				h2: Blocks,
-				h3: Blocks
-			}
-		}}
-	/>
-</section>
+<PortableText
+	{blocks}
+	serializers={{
+		types: {
+			codeBlock: Code
+		},
+		blockStyles: {
+			normal: Blocks,
+			h2: Blocks,
+			h3: Blocks
+		}
+	}}
+/>
 
 <style>
-	section {
-		max-width: 880px;
-		margin: 0 auto;
-	}
 </style>

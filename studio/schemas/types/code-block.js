@@ -21,6 +21,8 @@ export default {
           { title: 'Javascript', value: 'javascript' },
           { title: 'CSS', value: 'css' },
           { title: 'JSON', value: 'json' },
+          { title: 'Svelte', value: 'svelte' },
+          { title: 'Typescript', value: 'typescript' },
         ],
         layout: 'radio', // <-- defaults to 'dropdown'
         validation: (Rule) => Rule.required(),

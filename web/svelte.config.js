@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import preprocess from 'svelte-preprocess';
 
 const filePath = dirname(fileURLToPath(import.meta.url));
-const sassPath = `${filePath}/src/`;
+const sassPath = `${filePath}/src/styles/`;
 
 /** @type {import('@sveltejs/kit').Config} */
 
@@ -28,7 +28,8 @@ const config = {
 					$lib: path.resolve('./src/lib'),
 					$post: path.resolve('./src/components/post'),
 					$sanity: path.resolve('./src/lib/sanity'),
-					$stores: path.resolve('./src/stores')
+					$stores: path.resolve('./src/stores'),
+					$styles: path.resolve('./src/styles')
 				}
 			},
 			optimizeDeps: {

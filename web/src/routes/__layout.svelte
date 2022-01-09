@@ -25,9 +25,13 @@
 
 <style lang="scss">
 	main {
-		padding: 64px 0;
+		padding: 64px 8px;
 		max-width: $pageMaxWidth;
 		margin: 0 auto;
 		color: white;
+
+		@media (min-width: $mediumUp) {
+			padding: 64px 16px;
+		}
 	}
 </style>
