@@ -34,6 +34,7 @@ export async function getCategoryPages(slug, count, offset) {
           name
         },
         category-> {
+          'image': image.asset->,
           slug,
           title
         },

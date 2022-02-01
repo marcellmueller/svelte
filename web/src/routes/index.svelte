@@ -4,9 +4,7 @@
 
 	const query = /* groq */ `
     *[_type == 'pageHome'] | order(_updatedAt desc)[0] {
-			cover {
-				asset->
-			},
+			'cover': cover.asset->,
       title,
 			
     }
@@ -28,10 +26,11 @@
 	import { Image } from '$components/';
 
 	const { cover, title } = page;
+	console.log(cover);
 </script>
 
 <div>
-	<Image src={cover.asset.url} width={500} />
+	<Image image={cover} />
 </div>
 
 <style lang="scss">
