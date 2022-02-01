@@ -1,5 +1,6 @@
 <script>
-	import { Header, Footer } from '$components';
+	import { store } from '$stores';
+	import { Header, Footer, Nav } from '$components';
 </script>
 
 <svelte:head>
@@ -18,7 +19,10 @@
 
 <Header />
 <main class="body-1">
-	<slot />
+	<Nav categories={store.site.categories} />
+	<div class="container">
+		<slot />
+	</div>
 </main>
 
 <Footer />
@@ -29,9 +33,13 @@
 		max-width: $pageMaxWidth;
 		margin: 0 auto;
 		color: white;
+		display: flex;
 
 		@media (min-width: $mediumUp) {
 			padding: 64px 16px;
 		}
+	}
+	.container {
+		width: 100%;
 	}
 </style>

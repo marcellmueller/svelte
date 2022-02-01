@@ -1,8 +1,12 @@
 <script context="module">
 	import { getPage } from '$api';
+	import { store } from '$stores';
+
 	export const load = async (ctx) => {
-		const page = ctx.params.page;
-		const data = await getPage(page);
+		const post = ctx.params.post;
+		const data = await getPage(post);
+
+		store.site = data.site;
 
 		return {
 			props: {

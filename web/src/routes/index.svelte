@@ -1,5 +1,6 @@
 <script context="module">
 	import { getStaticPage } from '$api';
+	import { store } from '$stores';
 
 	const query = /* groq */ `
     *[_type == 'pageHome'] | order(_updatedAt desc)[0] {
@@ -12,6 +13,8 @@
   `;
 	export const load = async () => {
 		const data = await getStaticPage(query);
+		store.site = data.site;
+
 		return {
 			props: {
 				page: data.page
