@@ -2,18 +2,18 @@ import { sanity } from './sanity.js';
 import { site } from './fragments';
 
 export async function getStaticPage(payload) {
-	const query = /* groq */ `
+  const query = /* groq */ `
     {
       'page': ${payload},
       ${site}
     }
   `;
 
-	return await sanity.fetch(query);
+  return await sanity.fetch(query);
 }
 
 export async function getPage(slug) {
-	const query = /* groq */ `
+  const query = /* groq */ `
     {
       'page': *[_type == 'post' && slug.current == $slug][0] {
         ...,
@@ -23,7 +23,7 @@ export async function getPage(slug) {
     }
   `;
 
-	return await sanity.fetch(query, { slug });
+  return await sanity.fetch(query, { slug });
 }
 
 export async function getCategoryPages(slug, count, offset) {
@@ -48,4 +48,28 @@ export async function getCategoryPages(slug, count, offset) {
   `;
 
   return await sanity.fetch(query, { slug, from: count, to: offset });
+}
+
+export async function getPosts(count, offset) {
+  const query = /* groq */ `
+    {
+      'page': *[_type == 'post'][$from...$to] {
+        author-> {
+          name
+        },
+        category-> {
+          'image': image.asset->,
+          slug,
+          title
+        },
+        date,
+        slug,
+        title
+      },
+      'count': count(*[_type == 'post' && !(_id in path('drafts.**'))]),
+      ${site}
+    }
+  `;
+
+  return await sanity.fetch(query, { from: count, to: offset });
 }
