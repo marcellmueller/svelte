@@ -17,10 +17,9 @@
 </script>
 
 <script>
-	import { BlockRenderer } from '$post';
+	import { BlockRenderer, Share } from '$post';
 
 	export let page;
-
 	const { title } = page;
 </script>
 
@@ -28,6 +27,7 @@
 	<h1>{title}</h1>
 
 	<BlockRenderer blocks={page.blockContent} />
+	<Share {title} />
 </section>
 
 <style lang="scss">

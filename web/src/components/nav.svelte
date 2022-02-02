@@ -19,4 +19,8 @@
 		list-style-type: none;
 		padding: 0;
 	}
+
+	a:hover {
+		color: red;
+	}
 </style>

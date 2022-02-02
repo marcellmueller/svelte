@@ -14,6 +14,36 @@
 			position: relative;
 			min-height: 100vh;
 		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 0;
+		}
+		.headline-2 {
+			font-family: 'Source Code Pro', monospace;
+			font-size: 32px;
+			font-weight: 700;
+		}
+
+		.headline-3 {
+			font-family: 'Source Code Pro', monospace;
+			font-size: 24px;
+			font-weight: 700;
+		}
+
+		.body-1 {
+			font-family: 'Source Code Pro', monospace;
+			font-size: 18px;
+			font-weight: 400;
+		}
 	</style>
 </svelte:head>
 

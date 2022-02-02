@@ -8,10 +8,11 @@
 	} = image;
 
 	const ar = aspectRatio || height / width;
+	console.log(aspectRatio, ar);
 </script>
 
 <div class="img container" style="padding-top: {ar * 100}%">
-	<img alt={alt || ''} />
+	<img alt={alt || ''} src={image.url} />
 </div>
 
 <style lang="scss">

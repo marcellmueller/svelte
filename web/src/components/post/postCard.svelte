@@ -5,26 +5,51 @@
 	const { image } = category;
 </script>
 
-<div class="container">
-	<a href={`/posts/${slug.current}`}>{title}</a>
-	<div>{author.name}</div>
-	<div>{date}</div>
-	<a href={`/category/${category.slug.current}`}>{post.category.title}</a>
-	<div class="image-container">
-		<Image alt={image.alt} {image} aspectRatio={4 / 3} />
+<a href={`/posts/${slug.current}`}>
+	<div class="container">
+		<div class="content">
+			<h2 class="headline-2">
+				{title}
+			</h2>
+			<div class="details">
+				{author.name}
+				{date && ' / '}
+				{date}
+				{category.title && ' / '}
+				<a href={`/category/${category.slug.current}`}>{category.title}</a>
+			</div>
+		</div>
+		<div class="thumbnail">
+			<Image alt={image.alt} {image} aspectRatio={9 / 16} />
+		</div>
 	</div>
-</div>
+</a>
 
 <style>
 	.container {
+		display: flex;
+		justify-content: space-between;
 		background-color: grey;
-		max-width: 880px;
+		max-width: 680px;
 		margin: 1em auto;
 		padding: 16px;
 		border-radius: 4px;
 	}
 
-	.image-container {
-		width: 100px;
+	.thumbnail {
+		width: 300px;
+	}
+
+	.content {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.details {
+		display: flex;
+		flex-direction: row;
+		font-size: 14px;
 	}
 </style>

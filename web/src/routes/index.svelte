@@ -9,6 +9,7 @@
 			
     }
   `;
+
 	export const load = async () => {
 		const data = await getStaticPage(query);
 		store.site = data.site;
@@ -26,7 +27,6 @@
 	import { Image } from '$components/';
 
 	const { cover, title } = page;
-	console.log(cover);
 </script>
 
 <div>
